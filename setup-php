@@ -1,0 +1,65 @@
+Herausfinden was phpbrew ist und was es macht:
+
+Website über die die Anleitung bei mir zu finden war: https://www.sitepoint.com/use-phpbrew-virtphp/
+PHPbrew ist seit 2012 auf dem Markt. phpbrew installiert verschiedene Versionen von PHP und kann sie lagern.
+Das bedeutet phpbrew ist ein kleiner Manager, darüber man das PHP steuern kann.
+Man kann von älteren Versionen durch phpbrew zu neueren Versionen wechseln.
+
+phpbrew ist also speziell nur für PHP ausgerichtet und Homebrew lässt auch andere Pakete installieren.
+
+Anleitung auf der Website befolgt:
+
+$ brew install automake autoconf curl pcre re2c mhash libtool
+icu4c gettext jpeg libxml2 mcrypt gmp libevent EINGEGEBEN!
+
+brew install automake autoconfiguration
+      curl(transfer data)
+      pcre(Ausdruck pro Zeile)
+      re2c(Schreibweise vereinfacht)
+      mhash(free libary)
+                                -> Sinn des Commands verstehen und Wörter bei Google eingegeben : Suchbegriff command defintion
+brew link icu4c
+
+----->Anweisungen weiter befolgt
+
+Daten von phpbrew mithilfe dem command curl übertragen
+curl -L -O https://github.com/phpbrew/phpbrew/raw/master/phpbrew
+
+-> chmod +x phpbrew
+chmod is the command and system call which may change the access permissions to file system objects (files and directories).
+
+Command sudo allows users to run programs with the security privileges of another user.
+->sudo mv phpbrew /usr/bin/phpbrew
+
+FEHLERMELDUNG!Operation not permitted :Google!
+              Anweisung nicht erlaubt.
+
+Die Datei konnte man nicht unter /usr/bin verlegen, da man als lokalen User nur unter /usr/local (/bin) Rechte für Veränderungen hat.
+Mithilfe von dem Command mv phpbrew /usr/local/bin/phpbrew hab ich die phpbrew Datei in eine mit für mich rechtenuntergelegten
+Dateipfad untergebracht.
+
+Nach Fehlerbehebung: phpbrew init -> Initialisierung von phpbrew
+
+echo "source $HOME/.phpbrew/bashrc" >> ~/.bashrc
+
+phpbrew .bashrc ausgeben bzw echo command
+.bashrc is a shell script that Bash runs whenever it is started interactively.
+You can put any command in that file that you could type at the command prompt.
+
+PHPBREW ist nun vollständig installiert!
+
+Mit phpbrew known werden alle verfügbaren Versionen herausgesucht, die bekannt sind.
+
+phpbrew install 7.0.9 -> Die aktuellste Version wird installiert.
+
+FEHLERMELDUNG! Error: Configure failed: The last 5 lines in the log file: openssl wurde nicht erkannt
+              In dem Dateipfad /usr/local/include habe ich mithilfe der Verlinkung ln -s ../opt/openssl/include/openssl .
+              openssl im Ordner Include verlinkt.
+
+Dadurch erkannte phpbrew openssl wieder. Nach erneutem Versuch der Installation von PHP 7.0.9 kam eine Fehlermeldung, dass
+Readline nicht vorhanden ist.
+Durch den Comman brew install readline installiert man readline.
+Nun ist openssl und auch readline am richtigen Ort und die Installation hat problemlos funktioniert.
+
+
+PHP 7.0.9 ist installiert!

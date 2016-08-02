@@ -1,0 +1,25 @@
+Herausfinden was HOMEBREW für Mac ist und was es macht
+-> Homebrew bei Google eingeben
+  ->http://brew.sh/
+
+Recherche über bestimmte Begriffe gemacht, damit die Anleitung für mich leichter zu verstehen ist
+wget - (Befehl brew install wget bei Google eingegeben)
+  -> GNU Wget is a free software package for retrieving files
+  http://brewformulas.org/wget
+Symlinks -> Symbolische Verknüpfung
+
+https://de.wikipedia.org/wiki/Homebrew_(Paketverwaltung)
+Homebrew wird in der Programmiersprache Ruby geschrieben und vereinfacht die Paketverwaltung bzw die Installation für Mac.
+
+Beginnen mit der Ausführung der Anleitung
+-> /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"  EINGEFÜGT!
+-> Aufforderung von Eingabe des Passwortes -> Durch Nachfrage bei Tom richtiges Passwort eingegeben :-D
+
+-> Befehl brew help für commands eingegeben
+
+-> wget mithilfe von brew install wget installiert
+
+Homebrew lässt die Dateipfad für die Installation frei wählen.
+Mit : brew create sind Pakete eigens einfach zu erzeugen.
+
+Mit : brew edit wget kann man das Paket bearbeiten 
